@@ -34,6 +34,9 @@ function App() {
 }
 ```
 
+Styles are loaded automatically when you import from the package entry.
+If you ever want to manage styles explicitly, you can still import `@apicenterlabs/shockwave/style.css`.
+
 ---
 
 ## 🎨 Available Components

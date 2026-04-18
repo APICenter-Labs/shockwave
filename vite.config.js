@@ -12,13 +12,13 @@ export default defineConfig({
   plugins: [react()],
   build: {
     lib: {
-      // eslint-disable-next-line no-undef
-      entry: path.resolve(__dirname, "src/index.js"),
+      entry: path.resolve(dirname, "src/index.js"),
       name: "Shockwave",
-      fileName: "shockwave"
+      formats: ["es", "cjs"],
+      fileName: (format) => format === "es" ? "shockwave.js" : "shockwave.cjs"
     },
     rollupOptions: {
-      external: ["react", "react-dom"],
+      external: ["react", "react-dom", "react/jsx-runtime"],
       output: {
         globals: {
           react: "React"

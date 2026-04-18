@@ -4,15 +4,15 @@
   "version": "0.0.1",
   "type": "module",
   "description": "Shockwave - React component library by APICenter Labs",
-  "main": "dist/shockwave.umd.js",
-  "module": "dist/shockwave.es.js",
+  "main": "./dist/shockwave.cjs",
+  "module": "./dist/shockwave.js",
   "files": [
     "dist"
   ],
   "sideEffects": [
-    "*.css"
+    "**/*.css"
   ],
-  "style": "dist/shockwave.css",
+  "style": "./dist/shockwave.css",
   "keywords": [
     "react",
     "ui",
@@ -26,38 +26,36 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/shockwave.es.js",
-      "require": "./dist/shockwave.umd.js"
-    }
+      "import": "./dist/shockwave.js",
+      "require": "./dist/shockwave.cjs"
+    },
+    "./style.css": "./dist/shockwave.css"
   },
   "peerDependencies": {
     "react": "^18 || ^19",
     "react-dom": "^18 || ^19"
   },
   "scripts": {
-    "build": "vite build",
+    "build": "vite build && node scripts/postbuild.mjs",
+    "prepack": "npm run build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "dependencies": {},
   "devDependencies": {
+    "@chromatic-com/storybook": "^5.1.2",
     "@eslint/js": "^9.39.4",
+    "@storybook/addon-a11y": "^10.3.5",
+    "@storybook/addon-docs": "^10.3.5",
+    "@storybook/addon-vitest": "^10.3.5",
     "@storybook/react-vite": "^10.3.5",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
     "eslint": "^9.39.4",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.5.2",
+    "eslint-plugin-storybook": "^10.3.5",
     "globals": "^17.4.0",
     "storybook": "^10.3.5",
     "vite": "^8.0.4",
-    "@chromatic-com/storybook": "^5.1.2",
-    "@storybook/addon-vitest": "^10.3.5",
-    "@storybook/addon-a11y": "^10.3.5",
-    "@storybook/addon-docs": "^10.3.5",
-    "prop-types": "^15.8.1",
-    "eslint-plugin-storybook": "^10.3.5",
     "vitest": "^4.1.4"
   }
 }
