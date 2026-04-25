@@ -1,0 +1,14 @@
+@use './variables' as *;
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  color: $text-primary;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+}
+
+p {
+  color: $text-secondary;
+}

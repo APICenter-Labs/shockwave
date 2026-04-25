@@ -1,0 +1,41 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { Card, CardGrid, DocsPage, Note, PageHero } from '../DocsPrimitives';
+
+<Meta title="Frameworks/React" />
+
+<DocsPage>
+  <PageHero
+    section="Frameworks"
+    title="Using Shockwave in React"
+    lead="Shockwave is built for React first, so any React 18 or React 19 application is a natural fit as long as it can consume npm packages and CSS."
+  />
+
+  ## Install
+
+  ```bash
+  npm install @apicenterlabs/shockwave
+  ```
+
+  ## Example
+
+  ```jsx
+  import { Button } from '@apicenterlabs/shockwave';
+
+  export default function App() {
+    return <Button variant="primary">Continue</Button>;
+  }
+  ```
+
+  <CardGrid>
+    <Card title="Peer dependencies">
+      <p>Your app should already provide <code>react</code> and <code>react-dom</code>. Shockwave supports React 18 and React 19.</p>
+    </Card>
+    <Card title="Styling behavior">
+      <p>Styles are bundled with the package entry for typical bundler setups, and you can explicitly import <code>@apicenterlabs/shockwave/style.css</code> if your app wants direct stylesheet control.</p>
+    </Card>
+  </CardGrid>
+
+  <Note title="Best fit">
+    Use this guide for plain React applications or any React setup that does not need a framework-specific page. If you are using Next.js, Remix, Astro, or Vite, the other pages in this section include extra context for those environments.
+  </Note>
+</DocsPage>

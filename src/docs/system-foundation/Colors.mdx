@@ -1,0 +1,25 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { DocsPage, Note, PageHero, SHOCKWAVE_COLOR_TOKENS, TokenGrid } from '../DocsPrimitives';
+
+<Meta title="System Foundation/Colors" />
+
+<DocsPage>
+  <PageHero
+    section="System Foundation"
+    title="Colors"
+    lead="Shockwave's current palette is compact on purpose: a deep brand base, a vivid supporting teal, a warm accent, and a soft neutral background."
+  />
+
+  <TokenGrid items={SHOCKWAVE_COLOR_TOKENS} />
+
+  ## Usage guidance
+
+  - Use `$primary` for strong structure, headings, and primary interactive emphasis.
+  - Use `$secondary` for secondary emphasis and supportive UI messaging.
+  - Use `$accent` sparingly so important moments stay noticeable.
+  - Use `$light` as a calm surface behind denser interface content.
+
+  <Note title="Token source">
+    These values come directly from `src/styles/_variables.scss`, which keeps the Storybook guidance aligned with the codebase's actual design tokens.
+  </Note>
+</DocsPage>

@@ -1,0 +1,41 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { Card, CardGrid, DocsPage, Note, PageHero } from '../DocsPrimitives';
+
+<Meta title="Frameworks/Vite" />
+
+<DocsPage>
+  <PageHero
+    section="Frameworks"
+    title="Using Shockwave in Vite"
+    lead="Vite is the most direct fit for Shockwave: install the package, import the components you need, and let the bundler handle the generated CSS."
+  />
+
+  ## Install
+
+  ```bash
+  npm install @apicenterlabs/shockwave
+  ```
+
+  ## Example
+
+  ```jsx
+  import { Button } from '@apicenterlabs/shockwave';
+
+  export default function App() {
+    return <Button variant="primary">Open dashboard</Button>;
+  }
+  ```
+
+  <CardGrid>
+    <Card title="Peer dependencies">
+      <p>Your Vite app should already provide <code>react</code> and <code>react-dom</code>. No extra framework adapters are required.</p>
+    </Card>
+    <Card title="Styles">
+      <p>Shockwave styles load automatically with the package entry, but you can import <code>@apicenterlabs/shockwave/style.css</code> explicitly if your app prefers that pattern.</p>
+    </Card>
+  </CardGrid>
+
+  <Note title="When to use this setup">
+    Choose this path for React SPAs, admin panels, internal tools, and product frontends that do not need server-rendering behavior from the framework itself.
+  </Note>
+</DocsPage>

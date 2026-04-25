@@ -10,6 +10,14 @@ export default {
   tags: ['autodocs'],
   argTypes: {
     backgroundColor: { control: 'color' },
+    variant: {
+      control: 'select',
+      options: ['primary', 'secondary'],
+    },
+    size: {
+      control: 'select',
+      options: ['small', 'medium', 'large'],
+    },
   },
   args: { onClick: fn() },
 };
@@ -17,27 +25,27 @@ export default {
 export const Primary = {
   args: {
     variant: 'primary',
-    label: 'Button',
+    label: 'Primary Button',
   },
 };
 
 export const Secondary = {
   args: {
     variant: 'secondary',
-    label: 'Button',
+    label: 'Secondary Button',
   },
 };
 
 export const Large = {
   args: {
     size: 'large',
-    label: 'Button',
+    label: 'Large Button',
   },
 };
 
 export const Small = {
   args: {
     size: 'small',
-    label: 'Button',
+    label: 'Small Button',
   },
 };

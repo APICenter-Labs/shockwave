@@ -1,0 +1,41 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { Card, CardGrid, DocsPage, Note, PageHero } from '../DocsPrimitives';
+
+<Meta title="Frameworks/Remix" />
+
+<DocsPage>
+  <PageHero
+    section="Frameworks"
+    title="Using Shockwave in Remix"
+    lead="Remix apps can consume Shockwave directly in route modules and shared layout components while keeping the design system centralized in one package."
+  />
+
+  ## Install
+
+  ```bash
+  npm install @apicenterlabs/shockwave
+  ```
+
+  ## Example route module
+
+  ```jsx
+  import { Button } from '@apicenterlabs/shockwave';
+
+  export default function AccountRoute() {
+    return <Button variant="secondary">Save profile</Button>;
+  }
+  ```
+
+  <CardGrid>
+    <Card title="Nested routes">
+      <p>Use Shockwave primitives inside route modules, shared shells, and boundary components to keep the experience visually consistent.</p>
+    </Card>
+    <Card title="Styling model">
+      <p>The generated stylesheet is bundler-friendly. If your Remix setup needs explicit control, import <code>@apicenterlabs/shockwave/style.css</code> in the relevant entry point.</p>
+    </Card>
+  </CardGrid>
+
+  <Note title="Good fit">
+    Remix is a strong home for Shockwave when multiple route segments need the same interactive primitives without duplicating UI code.
+  </Note>
+</DocsPage>

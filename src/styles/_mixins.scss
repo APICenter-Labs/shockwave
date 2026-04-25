@@ -1,0 +1,15 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin button-theme($bg, $color: #fff) {
+  background-color: $bg;
+  color: $color;
+  border: none;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}

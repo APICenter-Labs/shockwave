@@ -1,0 +1,42 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { Card, CardGrid, DocsPage, Note, PageHero } from '../DocsPrimitives';
+
+<Meta title="System Foundation/Typography" />
+
+<DocsPage>
+  <PageHero
+    section="System Foundation"
+    title="Typography"
+    lead="Shockwave keeps typography intentionally lightweight: a native system font stack, strong heading color, and simple weight rules that travel well across apps."
+  />
+
+  <div className="shockwave-docs__type-sample">
+    <p className="shockwave-docs__eyebrow">Current specimen</p>
+    <h1>Heading One anchors the page.</h1>
+    <h2>Heading Two organizes sections.</h2>
+    <h3>Heading Three supports smaller content blocks.</h3>
+    <p>Body copy uses the system font stack and reads best when it stays concise, clear, and comfortably spaced.</p>
+  </div>
+
+  <CardGrid>
+    <Card title="Font stack">
+      <p>The base typography uses <code>system-ui, -apple-system, sans-serif</code>, which keeps rendering dependable across operating systems and app shells.</p>
+    </Card>
+    <Card title="Heading treatment">
+      <p>Headings use a weight of <code>600</code>, giving them enough authority without pushing the interface into a heavy editorial tone.</p>
+    </Card>
+    <Card title="Body color">
+      <p>Paragraphs currently lean on the secondary text tone, creating a softer reading experience that still fits the palette.</p>
+    </Card>
+  </CardGrid>
+
+  ## Practical guidance
+
+  - Reserve strong heading styles for page structure and section labels.
+  - Keep body copy short and task-oriented inside components and docs.
+  - Reuse the same font stack across product surfaces so Shockwave feels native to the host app instead of visually disconnected.
+
+  <Note title="Current implementation">
+    The typography rules described here come from `src/styles/_typography.scss`, so this page documents the existing baseline rather than an aspirational future scale.
+  </Note>
+</DocsPage>

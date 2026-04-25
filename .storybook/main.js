@@ -12,6 +12,7 @@ const config = {
     "@storybook/addon-a11y",
     "@storybook/addon-docs"
   ],
-  "framework": "@storybook/react-vite"
+  "framework": "@storybook/react-vite",
+  "title": "Shockwave"
 };
 export default config;

@@ -1,0 +1,52 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { Card, CardGrid, DocsPage, Note, PageHero } from '../DocsPrimitives';
+
+<Meta title="Frameworks/Astro" />
+
+<DocsPage>
+  <PageHero
+    section="Frameworks"
+    title="Using Shockwave in Astro"
+    lead="Astro can use Shockwave through the React integration, which gives you access to the component library while keeping hydration limited to the places that need it."
+  />
+
+  ## Install
+
+  ```bash
+  npm install @apicenterlabs/shockwave react react-dom @astrojs/react
+  ```
+
+  ## Add the React integration
+
+  ```js
+  import { defineConfig } from 'astro/config';
+  import react from '@astrojs/react';
+
+  export default defineConfig({
+    integrations: [react()],
+  });
+  ```
+
+  ## Example Astro page
+
+  ```astro
+  ---
+  import { Button } from '@apicenterlabs/shockwave';
+  ---
+
+  <Button client:load label="Start checkout" />
+  ```
+
+  <CardGrid>
+    <Card title="Partial hydration">
+      <p>Use Astro client directives like <code>client:load</code> or <code>client:visible</code> only where interactivity is required.</p>
+    </Card>
+    <Card title="Best use case">
+      <p>This is a strong option when most of the page is static but selected UI elements still benefit from shared React components.</p>
+    </Card>
+  </CardGrid>
+
+  <Note title="Integration reminder" tone="warm">
+    Shockwave is a React library, so Astro projects need the React renderer configured before the components can be used.
+  </Note>
+</DocsPage>

@@ -1,0 +1,43 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { Card, CardGrid, DocsPage, Note, PageHero } from '../DocsPrimitives';
+
+<Meta title="Frameworks/Next.js" />
+
+<DocsPage>
+  <PageHero
+    section="Frameworks"
+    title="Using Shockwave in Next.js"
+    lead="Shockwave works in Next.js projects as a shared UI layer for routes, dashboards, and product surfaces that need reusable React primitives."
+  />
+
+  ## Install
+
+  ```bash
+  npm install @apicenterlabs/shockwave
+  ```
+
+  ## Example client component
+
+  ```jsx
+  'use client';
+
+  import { Button } from '@apicenterlabs/shockwave';
+
+  export function DashboardAction() {
+    return <Button variant="primary">Create workspace</Button>;
+  }
+  ```
+
+  <Note title="Client components">
+    If the place you render Shockwave needs event handlers, mark that file as a client component in the Next.js app router. Purely static rendering can stay server-side.
+  </Note>
+
+  <CardGrid>
+    <Card title="App Router">
+      <p>Import Shockwave into <code>app/</code> components the same way you would any other React package. Keep interactivity inside client boundaries when needed.</p>
+    </Card>
+    <Card title="Pages Router">
+      <p>In <code>pages/</code> projects, install the package and import components directly into page modules, layouts, or shared UI wrappers.</p>
+    </Card>
+  </CardGrid>
+</DocsPage>

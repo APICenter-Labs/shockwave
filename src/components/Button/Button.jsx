@@ -1,8 +1,8 @@
-import './Button.css';
+import './Button.scss';
 
 /** Primary UI component for user interaction */
 export const Button = ({
-  primary = false,
+  primary = true,
   variant,
   backgroundColor = null,
   size = 'medium',
@@ -10,18 +10,20 @@ export const Button = ({
   children,
   ...props
 }) => {
-  const isPrimary = variant ? variant === 'primary' : primary;
-  const mode = isPrimary ? 'storybook-button--primary' : 'storybook-button--secondary';
-  const content = label ?? children;
+  const finalVariant = variant || (primary ? 'primary' : 'secondary');
 
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={backgroundColor && { backgroundColor }}
+      className={[
+        'storybook-button',
+        `storybook-button--${size}`,
+        `storybook-button--${finalVariant}`,
+      ].join(' ')}
+      style={backgroundColor ? { backgroundColor } : undefined}
       {...props}
     >
-      {content}
+      {label ?? children}
     </button>
   );
 };

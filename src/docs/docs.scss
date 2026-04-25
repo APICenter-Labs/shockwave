@@ -1,0 +1,151 @@
+@use '../styles/variables' as *;
+
+.shockwave-docs {
+  display: grid;
+  gap: 32px;
+  color: $text-primary;
+}
+
+.shockwave-docs__hero {
+  padding: 28px;
+  border: 1px solid rgba($primary, 0.12);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba($primary, 0.08), rgba($secondary, 0.12)),
+    linear-gradient(180deg, rgba(#fff, 0.96), rgba($light, 0.9));
+  box-shadow: 0 20px 48px rgba($primary, 0.08);
+}
+
+.shockwave-docs__eyebrow,
+.shockwave-docs__card-eyebrow {
+  margin: 0 0 8px;
+  color: $secondary;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.shockwave-docs__title {
+  margin: 0;
+  color: $primary;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  line-height: 1.05;
+}
+
+.shockwave-docs__lead {
+  max-width: 60ch;
+  margin: 12px 0 0;
+  color: rgba($primary, 0.84);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.shockwave-docs__hero-body {
+  margin-top: 16px;
+}
+
+.shockwave-docs__grid,
+.shockwave-docs__token-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.shockwave-docs__grid--3 {
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+.shockwave-docs__card,
+.shockwave-docs__token {
+  padding: 20px;
+  border: 1px solid rgba($primary, 0.1);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 12px 32px rgba($primary, 0.06);
+}
+
+.shockwave-docs__card h3,
+.shockwave-docs__token h3 {
+  margin: 0 0 8px;
+  color: $primary;
+  font-size: 1.1rem;
+}
+
+.shockwave-docs__card p,
+.shockwave-docs__token p,
+.shockwave-docs__note p {
+  margin: 0;
+  color: rgba($primary, 0.8);
+  line-height: 1.6;
+}
+
+.shockwave-docs__note {
+  display: grid;
+  gap: 8px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid rgba($secondary, 0.18);
+  background: rgba($secondary, 0.08);
+}
+
+.shockwave-docs__note strong {
+  color: $primary;
+}
+
+.shockwave-docs__note--warm {
+  border-color: rgba($accent, 0.24);
+  background: rgba($accent, 0.12);
+}
+
+.shockwave-docs__swatch {
+  width: 100%;
+  height: 72px;
+  margin-bottom: 14px;
+  border-radius: 16px;
+  border: 1px solid rgba($primary, 0.08);
+}
+
+.shockwave-docs__token-content {
+  display: grid;
+  gap: 6px;
+}
+
+.shockwave-docs__type-sample {
+  padding: 24px;
+  border: 1px solid rgba($primary, 0.1);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(#fff, 0.98), rgba($light, 0.9));
+}
+
+.shockwave-docs__type-sample h1,
+.shockwave-docs__type-sample h2,
+.shockwave-docs__type-sample h3,
+.shockwave-docs__type-sample p {
+  margin: 0 0 12px;
+}
+
+.shockwave-docs__type-sample h1,
+.shockwave-docs__type-sample h2,
+.shockwave-docs__type-sample h3 {
+  color: $primary;
+  font-weight: 600;
+}
+
+.shockwave-docs__type-sample p {
+  color: rgba($primary, 0.78);
+  line-height: 1.7;
+}
+
+@media (max-width: 640px) {
+  .shockwave-docs__hero {
+    padding: 22px;
+    border-radius: 20px;
+  }
+
+  .shockwave-docs__card,
+  .shockwave-docs__token,
+  .shockwave-docs__type-sample {
+    padding: 18px;
+  }
+}

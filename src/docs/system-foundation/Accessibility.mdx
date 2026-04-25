@@ -1,0 +1,36 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { Card, CardGrid, DocsPage, Note, PageHero } from '../DocsPrimitives';
+
+<Meta title="System Foundation/Accessibility" />
+
+<DocsPage>
+  <PageHero
+    section="System Foundation"
+    title="Accessibility"
+    lead="Accessibility is part of the system foundation, not a later QA step. Each Shockwave component should start with semantic HTML, strong focus behavior, and reviewable states."
+  />
+
+  <CardGrid columns={3}>
+    <Card title="Semantic elements">
+      <p>Use native HTML elements first. The current <code>Button</code> primitive renders a real <code>button</code>, which gives keyboard support and expected browser behavior by default.</p>
+    </Card>
+    <Card title="Visible focus">
+      <p>Interactive elements should always expose a clear focus state so keyboard users can track where they are in the interface.</p>
+    </Card>
+    <Card title="Review in Storybook">
+      <p>Shockwave uses Storybook with the accessibility addon so the component library stays easy to inspect during development and documentation work.</p>
+    </Card>
+  </CardGrid>
+
+  ## Core expectations
+
+  - Use semantic markup before adding custom interaction layers.
+  - Preserve keyboard navigation and logical tab order.
+  - Keep readable contrast between text, backgrounds, and interactive states.
+  - Provide labels, text alternatives, and descriptive content where components need them.
+  - Treat hover, focus, active, and disabled states as part of the design contract.
+
+  <Note title="Current foundation status">
+    Shockwave is still early, so this page establishes the baseline rules that future components should follow as the design system expands.
+  </Note>
+</DocsPage>

@@ -1,0 +1,56 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { Card, CardGrid, DocsPage, Note, PageHero } from '../DocsPrimitives';
+
+<Meta title="Getting Started/Installation" />
+
+<DocsPage>
+  <PageHero
+    section="Getting Started"
+    title="Installation"
+    lead="Install Shockwave from npm, keep React as a peer dependency in the host app, and import components directly from the package."
+  />
+
+  ## Install the package
+
+  ```bash
+  npm install @apicenterlabs/shockwave
+  ```
+
+  <Note title="Peer dependencies">
+    The consuming application should provide <code>react</code> and <code>react-dom</code>. Shockwave supports React 18 and React 19 consumers.
+  </Note>
+
+  ## Start using components
+
+  ```jsx
+  import { Button } from '@apicenterlabs/shockwave';
+
+  export default function App() {
+    return <Button variant="primary">Launch flow</Button>;
+  }
+  ```
+
+  ## Styles
+
+  Styles are loaded automatically from the package entry in typical bundler-based apps. If your app prefers explicit stylesheet control, you can import the generated stylesheet yourself.
+
+  ```jsx
+  import '@apicenterlabs/shockwave/style.css';
+  ```
+
+  <CardGrid>
+    <Card title="Local Storybook">
+      <p>Run <code>npm run storybook</code> to view component examples, docs pages, and usage guidance while you develop.</p>
+    </Card>
+    <Card title="Package build">
+      <p>Run <code>npm run build</code> to create the distributable <code>dist/</code> output before packing or publishing the library.</p>
+    </Card>
+  </CardGrid>
+
+  ## Verification checklist
+
+  - Install the package in a React app.
+  - Import a component from `@apicenterlabs/shockwave`.
+  - Confirm the component renders with styles applied.
+  - Use Storybook as the reference for props, variants, and system guidance.
+</DocsPage>

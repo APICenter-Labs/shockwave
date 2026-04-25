@@ -1,0 +1,63 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { Card, CardGrid, DocsPage, Note, PageHero } from '../DocsPrimitives';
+
+<Meta title="Frameworks/Overview" />
+
+<DocsPage>
+  <PageHero
+    section="Frameworks"
+    title="Where Shockwave can be used"
+    lead="Shockwave is a React component library, so it fits best in apps that already render React components and support package CSS."
+  >
+    <Note title="Adoption rule of thumb">
+      If your application can render React 18 or 19 components, Shockwave can usually slot in with minimal setup. The pages in this section show the most common integration paths.
+    </Note>
+  </PageHero>
+
+  <CardGrid columns={3}>
+    <Card title="React">
+      <p>Direct support target. Any React 18 or React 19 app can consume Shockwave components with the standard package install flow.</p>
+    </Card>
+    <Card title="Vite">
+      <p>Great for lightweight SPAs, internal tools, and frontends that want a fast local dev loop with minimal framework overhead.</p>
+    </Card>
+    <Card title="Next.js">
+      <p>Works well for app-router and page-router projects. Use client components when the consuming surface needs interactivity.</p>
+    </Card>
+    <Card title="Remix">
+      <p>Fits naturally into route modules and nested layouts while keeping UI primitives shared across pages.</p>
+    </Card>
+    <Card title="Astro + React">
+      <p>Shockwave can be used in Astro projects through the React integration, with hydration only where interactive UI is needed.</p>
+    </Card>
+  </CardGrid>
+
+  ## React-based support today
+
+  Shockwave publishes JavaScript and CSS for React consumers. That makes these the direct support targets right now:
+
+  - React applications
+  - Vite + React
+  - Next.js
+  - Remix
+  - Astro with the React integration
+
+  ## Supported consumption model
+
+  Shockwave publishes JavaScript and CSS. That means the host framework needs to do two things well:
+
+  - Resolve npm packages from <code>node_modules</code>.
+  - Render React components in the application shell.
+
+  ## Angular and Vue
+
+  Angular and Vue are not direct integration targets for the current package. Shockwave exports React components and declares <code>react</code> and <code>react-dom</code> as peer dependencies, so those frameworks would need an adapter layer, wrapper package, or web-component build that the repo does not currently ship.
+
+  <Note title="Recommendation" tone="warm">
+    It is safer to document Angular and Vue only after Shockwave has a real compatibility story for them. Right now, React and React-based frameworks are the supported path.
+  </Note>
+
+  ## Choose the matching guide
+
+  Use the framework-specific pages in this section for copy-ready installation steps and starter snippets.
+</DocsPage>

@@ -1,0 +1,39 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { Card, CardGrid, DocsPage, Note, PageHero } from '../DocsPrimitives';
+
+<Meta title="Getting Started/About" />
+
+<DocsPage>
+  <PageHero
+    section="Getting Started"
+    title="About Shockwave"
+    lead="Shockwave is APICenter Labs' React component library for building consistent product interfaces with a shared visual language and a lightweight integration footprint."
+  >
+    <Note title="Today in the library">
+      Shockwave is intentionally early-stage. The <code>Button</code> component is the current public primitive, and Storybook is the living home for the system as more components are added.
+    </Note>
+  </PageHero>
+
+  <CardGrid columns={3}>
+    <Card title="Built for reuse" eyebrow="Purpose">
+      <p>Package once, consume across multiple apps, and keep implementation details inside a single shared library.</p>
+    </Card>
+    <Card title="Bundler-friendly output" eyebrow="Architecture">
+      <p>Shockwave ships ESM, CommonJS, and generated CSS so it drops into modern React toolchains without manual packaging work.</p>
+    </Card>
+    <Card title="Storybook-first documentation" eyebrow="Workflow">
+      <p>Component behavior, design guidance, and adoption docs all live together, which makes Storybook the source of truth for both engineers and designers.</p>
+    </Card>
+  </CardGrid>
+
+  ## What Shockwave solves
+
+  - Creates a single place to define component APIs, visual patterns, and usage guidance.
+  - Keeps React and React DOM as peer dependencies so consuming apps stay in control of their runtime.
+  - Produces distributable JavaScript and CSS output with a simple import story for product teams.
+  - Gives the team a safe space to evolve tokens, accessibility guidance, and future components in public.
+
+  ## What to expect next
+
+  Shockwave already proves the full library workflow: component authoring, Storybook docs, package builds, and external-app consumption. That foundation makes it easier to add the next wave of primitives like inputs, overlays, and richer theming without changing how teams adopt the package.
+</DocsPage>

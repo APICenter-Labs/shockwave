@@ -1,6 +1,18 @@
 /** @type { import('@storybook/react-vite').Preview } */
 const preview = {
   parameters: {
+    options: {
+      storySort: {
+        order: [
+          'Getting Started',
+          'Frameworks',
+          ['Overview', 'React', 'Vite', 'Next.js', 'Remix', 'Astro', '*'],
+          'System Foundation',
+          'Components',
+          '*',
+        ],
+      },
+    },
     controls: {
       matchers: {
        color: /(background|color)$/i,
