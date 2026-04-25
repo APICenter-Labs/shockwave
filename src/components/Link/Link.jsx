@@ -4,13 +4,15 @@ import './Link.scss';
 export const Link = ({
   size = 'medium',
   label = "Link",
+  link = "#",
+  target,
   disabled,
   children,
   ...props
 }) => {
   return (
     <a
-      href=''
+      href={link}
       className={[
         'storybook-link',
         `storybook-link--${size}`,

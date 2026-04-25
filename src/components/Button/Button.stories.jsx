@@ -12,13 +12,39 @@ export default {
     variant: {
       control: 'select',
       options: ['primary', 'secondary'],
+      description: 'Defines the visual style of the button',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: 'primary' },
+      },
     },
+
     disabled: {
       control: 'boolean',
+      description: 'Disables the button, preventing user interaction and applying disabled styles',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: false },
+      },
     },
+
     size: {
       control: 'select',
       options: ['small', 'medium', 'large'],
+      description: 'Controls the overall size and padding of the button',
+      table: {
+        type: { summary: `'small' | 'medium' | 'large'` },
+        defaultValue: { summary: 'medium' },
+      },
+    },
+
+    label: {
+      control: 'text',
+      description: 'Text content displayed inside the button',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: 'Button' },
+      },
     },
   },
   args: { onClick: fn() },
@@ -28,7 +54,7 @@ export const Primary = {
   args: {
     variant: 'primary',
     label: 'Button',
-    primary: {},
+    size: 'medium',
     disabled: false
   },
 };
@@ -37,6 +63,7 @@ export const Secondary = {
   args: {
     variant: 'secondary',
     label: 'Button',
+    size: 'medium',
     disabled: false
   },
 };
@@ -44,13 +71,20 @@ export const Secondary = {
 export const Large = {
   args: {
     size: 'large',
-    label: 'Large Button',
+    label: 'Button',
+  },
+};
+
+export const Medium = {
+  args: {
+    size: 'medium',
+    label: 'Button',
   },
 };
 
 export const Small = {
   args: {
     size: 'small',
-    label: 'Small Button',
+    label: 'Button',
   },
 };

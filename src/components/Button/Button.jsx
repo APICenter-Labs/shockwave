@@ -2,15 +2,13 @@ import './Button.scss';
 
 /** Primary UI component for user interaction */
 export const Button = ({
-  primary = true,
-  variant,
+  variant = 'primary',
   size = 'medium',
-  label,
-  disabled,
+  label = "Button",
+  disabled = false,
   children,
   ...props
 }) => {
-  const finalVariant = variant || (primary ? 'primary' : 'secondary');
 
   return (
     <button
@@ -18,7 +16,7 @@ export const Button = ({
       className={[
         'storybook-button',
         `storybook-button--${size}`,
-        `storybook-button--${finalVariant}`,
+        `storybook-button--${variant}`,
         `${disabled ? 'storybook-button-disabled' : ''}`
       ].join(' ')}
       {...props}
