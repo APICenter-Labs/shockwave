@@ -7,6 +7,7 @@ export const Button = ({
   backgroundColor = null,
   size = 'medium',
   label,
+  disabled,
   children,
   ...props
 }) => {
@@ -19,6 +20,7 @@ export const Button = ({
         'storybook-button',
         `storybook-button--${size}`,
         `storybook-button--${finalVariant}`,
+        `${disabled ? 'storybook-button-disabled' : ''}`
       ].join(' ')}
       style={backgroundColor ? { backgroundColor } : undefined}
       {...props}

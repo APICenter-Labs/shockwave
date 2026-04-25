@@ -1,7 +1,7 @@
 @use '../../styles/variables' as v;
 @use '../../styles/mixins' as m;
 
-.storybook-button {
+.storybook-link {
   display: inline-block;
   cursor: pointer;
   border: 0;
@@ -12,40 +12,46 @@
   transition: 0.2s ease;
 }
 
-// Variants
-.storybook-button--primary {
-  @include m.button-theme(v.$secondary);
-}
+.storybook-link {
+  text-decoration: none;
+  color: v.$primary;
 
-.storybook-button--secondary {
-  border: 1px solid v.$secondary;
-  background-color: #fff;
-  color: v.$secondary;
+  .storybook-link-div {
+    --tw-duration: .3s;
+    transition-duration: .3s;
+    transition-property: all;
+    background-color: v.$primary;
+    height: 2px;
+    width: 0;
+  }
 
   &:hover {
-    background-color: v.$secondary;
-    color: #fff;
+    .storybook-link-div {
+      width: 100%;
+    }
   }
 }
-.storybook-button-disabled {
+.storybook-link-disabled {
   cursor: default;
-  background-color: gray;
+  color: gray;
   &:hover {
-    opacity: 1;
+    .storybook-link-div {
+      width: 0;
+    }
   }
 }
 // Sizes
-.storybook-button--small {
+.storybook-link--small {
   padding: 10px 16px;
   font-size: 12px;
 }
 
-.storybook-button--medium {
+.storybook-link--medium {
   padding: 11px 20px;
   font-size: 14px;
 }
 
-.storybook-button--large {
+.storybook-link--large {
   padding: 12px 24px;
   font-size: 16px;
 }

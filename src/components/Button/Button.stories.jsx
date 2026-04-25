@@ -14,6 +14,9 @@ export default {
       control: 'select',
       options: ['primary', 'secondary'],
     },
+    disabled: {
+      control: 'boolean',
+    },
     size: {
       control: 'select',
       options: ['small', 'medium', 'large'],
@@ -25,14 +28,15 @@ export default {
 export const Primary = {
   args: {
     variant: 'primary',
-    label: 'Primary Button',
+    label: 'Button',
   },
 };
 
 export const Secondary = {
   args: {
     variant: 'secondary',
-    label: 'Secondary Button',
+    label: 'Button',
+    disabled: false
   },
 };
 
