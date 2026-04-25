@@ -9,7 +9,6 @@ export default {
   },
   tags: ['autodocs'],
   argTypes: {
-    backgroundColor: { control: 'color' },
     variant: {
       control: 'select',
       options: ['primary', 'secondary'],
@@ -29,6 +28,8 @@ export const Primary = {
   args: {
     variant: 'primary',
     label: 'Button',
+    primary: {},
+    disabled: false
   },
 };
 

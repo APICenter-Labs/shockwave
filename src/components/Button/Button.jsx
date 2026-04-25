@@ -4,7 +4,6 @@ import './Button.scss';
 export const Button = ({
   primary = true,
   variant,
-  backgroundColor = null,
   size = 'medium',
   label,
   disabled,
@@ -22,7 +21,6 @@ export const Button = ({
         `storybook-button--${finalVariant}`,
         `${disabled ? 'storybook-button-disabled' : ''}`
       ].join(' ')}
-      style={backgroundColor ? { backgroundColor } : undefined}
       {...props}
     >
       {label ?? children}

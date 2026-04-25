@@ -9,7 +9,6 @@ export default {
   },
   tags: ['autodocs'],
   argTypes: {
-    color: { control: 'color' },
     disabled: {
       control: 'boolean'
     },

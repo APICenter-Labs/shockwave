@@ -15,25 +15,40 @@
 // Variants
 .storybook-button--primary {
   @include m.button-theme(v.$secondary);
-}
 
-.storybook-button--secondary {
-  border: 1px solid v.$secondary;
-  background-color: #fff;
-  color: v.$secondary;
-
-  &:hover {
-    background-color: v.$secondary;
-    color: #fff;
-  }
-}
-.storybook-button-disabled {
+  &.storybook-button-disabled {
   cursor: default;
-  background-color: gray;
+  background-color: v.$disabled;;
   &:hover {
     opacity: 1;
   }
 }
+}
+
+.storybook-button--secondary {
+  border: 1px solid v.$secondary;
+  background-color: v.$white;
+  color: v.$secondary;
+
+  &.storybook-button-disabled {
+    cursor: default;
+    color: gray;
+    border: 1px solid v.$disabled;
+    &:hover {
+      opacity: 1;
+      background-color: v.$white;
+      color: v.$disabled;;
+    }
+  }
+
+  &:hover {
+    background-color: v.$secondary;
+    color: v.$white;
+  }
+  
+}
+
+
 // Sizes
 .storybook-button--small {
   padding: 10px 16px;

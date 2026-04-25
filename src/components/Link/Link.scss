@@ -14,13 +14,13 @@
 
 .storybook-link {
   text-decoration: none;
-  color: v.$primary;
+  color: v.$secondary;
 
   .storybook-link-div {
     --tw-duration: .3s;
     transition-duration: .3s;
     transition-property: all;
-    background-color: v.$primary;
+    background-color: v.$secondary;
     height: 2px;
     width: 0;
   }
@@ -33,7 +33,7 @@
 }
 .storybook-link-disabled {
   cursor: default;
-  color: gray;
+  color: v.$disabled;
   &:hover {
     .storybook-link-div {
       width: 0;
